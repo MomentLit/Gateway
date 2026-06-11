@@ -1,0 +1,31 @@
+server:
+  port: ${SERVER_PORT:8080}
+
+spring:
+  application:
+    name: ApiGateway
+
+  cloud:
+    gateway:
+      server:
+        webflux:
+          routes:
+            - id: auth-service
+              uri: ${AUTH_SERVICE_URL:http://localhost:8080}
+              predicates:
+                - Path=/auth/**
+
+            - id: user-service
+              uri: ${USER_SERVICE_URL:http://localhost:8081}
+              predicates:
+                - Path=/users/**
+
+            - id: spaces-service
+              uri: ${SPACES_SERVICE_URL:http://localhost:8082}
+              predicates:
+                - Path=/spaces/**
+
+            - id: matchings-service
+              uri: ${MATCHINGS_SERVICE_URL:http://localhost:8083}
+              predicates:
+                - Path=/matchings/**
