@@ -3,7 +3,7 @@ server:
 
 spring:
   application:
-    name: ApiGateway
+    name: Gateway
 
   cloud:
     gateway:
@@ -20,12 +20,12 @@ spring:
               predicates:
                 - Path=/users/**
 
-            - id: spaces-service
-              uri: ${SPACES_SERVICE_URL:http://localhost:8082}
+            - id: space-service
+              uri: ${SPACE_SERVICE_URL:http://localhost:8082}
               predicates:
                 - Path=/spaces/**
 
-            - id: matchings-service
-              uri: ${MATCHINGS_SERVICE_URL:http://localhost:8083}
+            - id: matching-service
+              uri: ${MATCHING_SERVICE_URL:http://localhost:8083}
               predicates:
                 - Path=/matchings/**
