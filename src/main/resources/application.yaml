@@ -29,3 +29,8 @@ spring:
               uri: ${MATCHING_SERVICE_URL:http://localhost:8083}
               predicates:
                 - Path=/matchings/**
+
+            - id: admin-service
+              uri: ${ADMIN_SERVICE_URL:http://localhost:8083}
+              predicates:
+                - Path=/admin/**
