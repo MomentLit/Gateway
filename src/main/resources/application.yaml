@@ -31,6 +31,11 @@ spring:
                 - Path=/matchings/**
 
             - id: admin-service
-              uri: ${ADMIN_SERVICE_URL:http://localhost:8083}
+              uri: ${ADMIN_SERVICE_URL:http://localhost:8084}
               predicates:
                 - Path=/admin/**
+
+            - id: image-service
+              uri: ${IMAGE_SERVICE_URL:http://localhost:8083}
+              predicates:
+                - Path=/images/**
