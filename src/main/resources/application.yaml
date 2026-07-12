@@ -15,6 +15,16 @@ spring:
               predicates:
                 - Path=/auth/**
 
+            - id: popup-space-history-service
+              uri: ${POPUP_SERVICE_URL:http://localhost:8086}
+              predicates:
+                - Path=/spaces/*/popups/history
+
+            - id: popup-user-history-service
+              uri: ${POPUP_SERVICE_URL:http://localhost:8086}
+              predicates:
+                - Path=/users/*/popups/history
+
             - id: user-service
               uri: ${USER_SERVICE_URL:http://localhost:8081}
               predicates:
@@ -30,12 +40,22 @@ spring:
               predicates:
                 - Path=/matchings/**
 
+            - id: popup-service
+              uri: ${POPUP_SERVICE_URL:http://localhost:8086}
+              predicates:
+                - Path=/popups/**
+
+            - id: alarm-service
+              uri: ${ALARM_SERVICE_URL:http://localhost:8085}
+              predicates:
+                - Path=/alarm/**
+
             - id: admin-service
-              uri: ${ADMIN_SERVICE_URL:http://localhost:8084}
+              uri: ${ADMIN_SERVICE_URL:http://localhost:8087}
               predicates:
                 - Path=/admin/**
 
             - id: image-service
-              uri: ${IMAGE_SERVICE_URL:http://localhost:8083}
+              uri: ${IMAGE_SERVICE_URL:http://localhost:8084}
               predicates:
                 - Path=/images/**
