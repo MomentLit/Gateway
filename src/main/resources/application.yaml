@@ -59,3 +59,8 @@ spring:
               uri: ${IMAGE_SERVICE_URL:http://localhost:8084}
               predicates:
                 - Path=/images/**
+
+            - id: chating-service
+              uri: ${CHATING_SERVICE_URL:http://localhost:8089}
+              predicates:
+                - Path=/chat/**
