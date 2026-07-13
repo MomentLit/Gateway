@@ -64,3 +64,8 @@ spring:
               uri: ${CHATING_SERVICE_URL:http://localhost:8089}
               predicates:
                 - Path=/chat/**
+
+            - id: chating-websocket-service
+              uri: ${CHATING_WS_SERVICE_URL:ws://localhost:8089}
+              predicates:
+                - Path=/ws/chat
